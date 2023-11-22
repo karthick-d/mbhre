@@ -1,5 +1,11 @@
 package com.mbhre.util
 
+/**
+ * after api call event checks functions
+ *
+ * @param T
+ * @property content
+ */
 open class Event<out T>(private val content: T) {
 
     var hasBeenHandled = false

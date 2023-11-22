@@ -10,11 +10,16 @@ import com.mbhre.R
 import com.mbhre.databinding.ListUsersCellBinding
 import com.mbhre.model.DataItem
 
-
+/***
+ * List of data populate with adaptar class
+ */
 class UsersAdapter(var applicationContext: Context) : RecyclerView.Adapter<UsersAdapter.UsersViewHolder>() {
-
-
-
+    /**
+     * Populate data on particular widget with conditions
+     *
+     * @property itemViews
+     * @property context
+     */
     inner class UsersViewHolder(var itemViews: ListUsersCellBinding,var context: Context): RecyclerView.ViewHolder(itemViews.root){
         fun setdata(picItem: DataItem,) {
              itemViews.textUsersId.text=picItem.id
@@ -36,6 +41,9 @@ class UsersAdapter(var applicationContext: Context) : RecyclerView.Adapter<Users
         }
     }
 
+    /***
+     * Dataitem check between older and new data to set on viewholder
+     */
     private val differCallback = object : DiffUtil.ItemCallback<DataItem>() {
         override fun areItemsTheSame(oldItem: DataItem, newItem: DataItem): Boolean {
             return oldItem.id == newItem.id
@@ -54,9 +62,18 @@ class UsersAdapter(var applicationContext: Context) : RecyclerView.Adapter<Users
         return UsersViewHolder(userBinding,applicationContext)
     }
 
-
+    /**
+     * List of data size get in this method
+     *
+     */
     override fun getItemCount() =  differ.currentList.size
 
+    /**
+     * Data from activity bind data to ui with holder
+     *
+     * @param holder
+     * @param position
+     */
     override fun onBindViewHolder(holder: UsersViewHolder, position: Int) {
         val picItem = differ.currentList[position]
         holder.setdata(picItem)

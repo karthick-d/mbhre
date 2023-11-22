@@ -1,5 +1,12 @@
 package com.mbhre.util
 
+/**
+ * Output hander of apicall
+ *
+ * @param T
+ * @property data
+ * @property message
+ */
 sealed class Resource<T>(
     val data: T? = null,
     val message: String? = null

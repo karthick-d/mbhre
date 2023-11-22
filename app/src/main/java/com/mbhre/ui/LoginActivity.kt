@@ -19,7 +19,10 @@ import com.mbhre.util.errorSnack
 import com.mbhre.viewmodel.LoginViewModel
 import com.mbhre.viewmodel.ViewModelProviderFactory
 
-
+/**
+ * class represent main screen data operations
+ *
+ */
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var loginViewModel: LoginViewModel
@@ -28,24 +31,33 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         activityLoginBinding = ActivityLoginBinding.inflate(layoutInflater)
-        val view: View = activityLoginBinding.getRoot()
+        val view: View = activityLoginBinding.root
         setContentView(view)
-
+        //
         init()
     }
 
+    /**
+     * create an instance for repository and view-model class
+     *
+     */
     private fun init() {
         val repository = AppRepository()
         val factory = ViewModelProviderFactory(application, repository)
         loginViewModel = ViewModelProvider(this, factory).get(LoginViewModel::class.java)
     }
 
+    /**
+     * submit button click functionality and api calls
+     *
+     * @param view
+     */
     fun onLoginClick(view: View) {
         var email = activityLoginBinding.edtEmail.text.toString()
         val username = activityLoginBinding.edtUsername.text.toString()
         val gender = activityLoginBinding.spinnerForGender.selectedItem.toString()
         val status = activityLoginBinding.spinnerForStatus.selectedItem.toString()
-        Log.e("username",""+username);
+
 
 
         if (email.isNotEmpty() && username.isNotEmpty() && Patterns.EMAIL_ADDRESS.matcher(
@@ -119,10 +131,18 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * hide progressbar after success from api call
+     *
+     */
     private fun hideProgressBar() {
         activityLoginBinding.progress.visibility = View.GONE
     }
 
+    /**
+     * show progressbar after submit button click
+     *
+     */
     private fun showProgressBar() {
         activityLoginBinding.progress.visibility = View.VISIBLE
     }

@@ -16,7 +16,10 @@ import com.mbhre.viewmodel.UsersViewModel
 import com.mbhre.viewmodel.ViewModelProviderFactory
 import com.mbhre.util.Resource
 
-
+/**
+ * List screen data access functionality
+ *
+ */
 class MainActivity : AppCompatActivity() {
 
     private lateinit var viewModel: UsersViewModel
@@ -32,6 +35,10 @@ class MainActivity : AppCompatActivity() {
         init()
     }
 
+    /**
+     * create an instance for views and adapters
+     *
+     */
     private fun init() {
         MainBinding.rvPics.setHasFixedSize(true)
         MainBinding.rvPics.layoutManager = LinearLayoutManager(this)
@@ -39,6 +46,10 @@ class MainActivity : AppCompatActivity() {
         setupViewModel()
     }
 
+    /**
+     * view-model instance with activity
+     *
+     */
     private fun setupViewModel() {
         val repository = AppRepository()
         val factory = ViewModelProviderFactory(application, repository)
@@ -46,6 +57,10 @@ class MainActivity : AppCompatActivity() {
         getUsers()
     }
 
+    /**
+     * get list of data from api with view-model
+     *
+     */
     private fun getUsers() {
         viewModel.usersData.observe(this, Observer { response ->
             when (response) {
@@ -72,10 +87,18 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
+    /**
+     * hide progressbar after success from api call
+     *
+     */
     private fun hideProgressBar() {
         MainBinding.progress.visibility = View.GONE
     }
 
+    /**
+     * show progressbar after submit button click
+     *
+     */
     private fun showProgressBar() {
         MainBinding.progress.visibility = View.VISIBLE
     }
@@ -85,6 +108,10 @@ class MainActivity : AppCompatActivity() {
         //Preventing Click during loading
     }
 
+    /**
+     * back button functionality of app
+     *
+     */
     override fun onBackPressed() {
         super.onBackPressed()
 

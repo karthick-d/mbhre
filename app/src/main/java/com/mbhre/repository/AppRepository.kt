@@ -3,6 +3,10 @@ package com.mbhre.repository
 import com.mbhre.network.RequestBodies
 import com.mbhre.network.RetrofitInstance
 
+/**
+ *  class responsible for data access from view-model class
+ *
+ */
 class AppRepository {
 
     suspend fun getUsers() = RetrofitInstance.loginApi.getUsers()

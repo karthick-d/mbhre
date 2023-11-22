@@ -14,6 +14,15 @@ import kotlinx.coroutines.launch
 import retrofit2.Response
 import java.io.IOException
 
+/**
+ * class represent for access data and business logic for list screen
+ *
+ * @property appRepository
+ * @constructor
+ * TODO
+ *
+ * @param app
+ */
 class UsersViewModel(
     app: Application,
     private val appRepository: AppRepository
@@ -25,17 +34,24 @@ class UsersViewModel(
         getUsers()
     }
 
+    /**
+     * viewmodel instance for api call to fetch data
+     *
+     */
     fun getUsers() = viewModelScope.launch {
         fetchUsers()
     }
 
-
+    /**
+     * method represent intermediate data pass to repository and handle output response
+     *
+     */
     private suspend fun fetchUsers() {
         usersData.postValue(Resource.Loading())
         try {
             if (hasInternetConnection(getApplication<MyApplication>())) {
                 val response = appRepository.getUsers()
-                usersData.postValue(handlePicsResponse(response))
+                usersData.postValue(handleUserResponse(response))
             } else {
                 usersData.postValue(Resource.Error(getApplication<MyApplication>().getString(R.string.no_internet_connection)))
             }
@@ -59,7 +75,13 @@ class UsersViewModel(
         }
     }
 
-    private fun handlePicsResponse(response: Response<UsersResponse>): Resource<UsersResponse> {
+    /**
+     * method represent api call output response success or failure methods
+     *
+     * @param response
+     * @return
+     */
+    private fun handleUserResponse(response: Response<UsersResponse>): Resource<UsersResponse> {
         if (response.isSuccessful) {
             response.body()?.let { resultResponse ->
                 return Resource.Success(resultResponse)

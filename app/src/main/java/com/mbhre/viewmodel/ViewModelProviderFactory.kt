@@ -5,6 +5,12 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.mbhre.repository.AppRepository
 
+/**
+ * class represent view-model persist data
+ *
+ * @property app
+ * @property appRepository
+ */
 class ViewModelProviderFactory(
     val app: Application,
     val appRepository: AppRepository

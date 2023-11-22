@@ -6,6 +6,9 @@ import android.net.NetworkCapabilities
 import android.os.Build
 import com.mbhre.app.MyApplication
 
+/**
+ * Network connection check throughout the application
+ */
 object Utils {
     fun hasInternetConnection(application: MyApplication): Boolean {
         val connectivityManager = application.getSystemService(

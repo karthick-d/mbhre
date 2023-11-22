@@ -9,6 +9,14 @@ import android.widget.Toast
 import androidx.annotation.IntegerRes
 import com.google.android.material.snackbar.Snackbar
 
+
+/**
+ * Message alert to user
+ *
+ * @param messageRes
+ * @param length
+ * @param f
+ */
 @SuppressLint("ResourceType")
 inline fun View.snack(@IntegerRes messageRes: Int, length: Int = Snackbar.LENGTH_LONG, f: Snackbar.() -> Unit) {
     snack(resources.getString(messageRes), length, f)

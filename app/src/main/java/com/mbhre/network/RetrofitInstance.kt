@@ -9,6 +9,10 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
+/**
+ * Retrofit library integration with access token and base url
+ *
+ */
 class RetrofitInstance {
     companion object {
 
@@ -27,7 +31,9 @@ class RetrofitInstance {
         }
 
 
-
+        /**
+         * calling interface to api call
+         */
         val loginApi by lazy {
             retrofitLogin.create(API::class.java)
         }

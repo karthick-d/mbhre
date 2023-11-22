@@ -4,7 +4,9 @@ package com.mbhre.util
 
 import okhttp3.*
 
-
+/***
+ * Header set class for each api to access
+ */
 
 class OAuthInterceptor(private val tokenType: String, private val accessToken: String) : Interceptor {
     override fun intercept(chain: Interceptor.Chain): okhttp3.Response {
