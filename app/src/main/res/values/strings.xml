@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">MBHRE</string>
+    <string name="no_internet_connection">No internet connection</string>
+    <string name="network_failure">Network Failure</string>
+    <string name="conversion_error">Conversion Error</string>
+    <string name="create_user">Create User</string>
+    <string name="email_id">Email-Id</string>
+    <string name="username">Username</string>
+    <string name="gender_mandatory">Gender Mandatory</string>
+    <string name="emailid_mandatory">EmailId Mandatory</string>
+    <string name="username_mandatory">Username Mandatory</string>
+    <string name="valid_emailid">"Valid Emailid "</string>
+    <string name="status_mandatory">Status Mandatory</string>
+    <string-array name="gender">
+        <item>----select your gender---</item>
+        <item>Male</item>
+        <item>Female</item>
+
+    </string-array>
+    <string-array name="status">
+        <item>----select your status---</item>
+        <item>Active</item>
+        <item>Inactive</item>
+
+    </string-array>
+</resources>

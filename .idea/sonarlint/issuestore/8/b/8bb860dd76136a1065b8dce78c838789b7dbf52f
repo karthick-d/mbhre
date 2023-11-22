@@ -1,0 +1,10 @@
+
+dkotlin:S1172E"@Use "_" instead of this unused lambda parameter "loginResponse".(Úî‚‹ùÿÿÿÿ8€®¥¬¿1
+Xkotlin:S1172O":Use "_" instead of this unused lambda parameter "message".(ï£“8ÔøŠ­¿1
+\kotlin:S6511^"=Merge chained "if" statements into a single "when" statement.(Ë´¯‹8“®¥¬¿1
+Jkotlin:S6518(",Replace function call with indexed accessor.(ÍšU8”®¥¬¿1
+Wkotlin:S65196"3Replace "!" and "equals" with binary operator "!=".(¥©×ıÿÿÿÿ8•®¥¬¿1
+Wkotlin:S65196"3Replace "!" and "equals" with binary operator "!=".(¥©×ıÿÿÿÿ8•®¥¬¿1
+Okotlin:S6519a"+Replace "equals" with binary operator "==".(ïÙµ—ıÿÿÿÿ8•®¥¬¿1
+Okotlin:S6519l"+Replace "equals" with binary operator "==".(ŒèŒüÿÿÿÿ8•®¥¬¿1
+Ikotlin:S6519q"+Replace "equals" with binary operator "==".(Ü†“L8•®¥¬¿1
